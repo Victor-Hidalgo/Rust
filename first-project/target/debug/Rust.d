@@ -1,0 +1,1 @@
+C:\Users\Victor\ Hidalgo\Documents\Rust\first-project\target\debug\Rust.exe: C:\Users\Victor\ Hidalgo\Documents\Rust\first-project\src\main.rs C:\Users\Victor\ Hidalgo\Documents\Rust\first-project\src\print.rs
