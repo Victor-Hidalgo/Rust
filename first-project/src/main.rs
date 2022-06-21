@@ -7,8 +7,9 @@ mod tuples;
 mod arrays;
 mod vectors;
 mod conditionals;
-*/
 mod matches;
+*/
+mod loops;
 
 fn main() {
     /*
@@ -20,6 +21,7 @@ fn main() {
     arrays::run();
     vectors::run();
     conditionals::run();
-    */
     matches::run();
+    */
+    loops::run();
 }
