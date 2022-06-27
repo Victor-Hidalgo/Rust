@@ -8,8 +8,9 @@ mod arrays;
 mod vectors;
 mod conditionals;
 mod matches;
-mod loops;*/
-mod errors;
+mod loops;
+mod errors;*/
+mod strings;
 
 fn main() {
     /*
@@ -22,6 +23,7 @@ fn main() {
     vectors::run();
     conditionals::run();
     matches::run();
-    loops::run();*/
-    errors::run();
+    loops::run();
+    errors::run();*/
+    strings::run();
 }

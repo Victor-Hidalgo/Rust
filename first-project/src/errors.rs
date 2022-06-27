@@ -1,17 +1,9 @@
 use std::fs::File;
+use std::io::ErrorKind;
+
 pub fn run(){
 
-    //use std::fs::File;
-    //let f: u32 = File::open("hello.txt");
-
-    /*let v = vec![1, 2, 3];
-    v[99];*/
-
-    let result = foo(11).unwrap();
-    println!("result is {}", result);
-    println!("end of main");
-
-    let f = File::open("test.jpg");
+    /*let f = File::open("test.jpg");
     match f{
         Ok(f)=>{
             println!("file found {:?}", f);
@@ -19,14 +11,97 @@ pub fn run(){
         Err(e)=>{
             println!("Not found \n{:?}", e);
         }
+    }*/
+    println!("End of main");
+
+    let sol = is_prime(3);
+    
+    match sol{
+        Ok(d) =>{
+            println!("{}, it is prime", d);
+        },
+        Err(msg) =>{
+            println!("Error: {}", msg);
+        }
     }
-    println!("End of main")
+
+    //let g = File::open("hello.txt").expect("Failed to open hello.txt");
+
+    let f = File::open("hello.txt");
+
+    /*let b = match f{
+
+        Ok(file) => file,
+
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file: {:?}", e),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error);
+            }
+        },
+    };*/
+
+    let i = 21;
+
+    match foo(i) {
+
+        Ok(b) => b,
+
+        Err(error) => match is_even(20){
+            Ok(c) => c,
+            Err(e) => panic!("The number {:?} is an odd positive", e),
+        }
+
+        second_error => {
+            panic!("Could not determined the type of {:?}", second_error);
+        }
+    };
 }
 
-fn foo(x: i32)->Result<bool,String>{
-    if x % 2 != 0{
+fn foo(n: i32) -> Result<bool, String>{
+    
+    if n < 0{
         return Ok(true);
-    } else{
-        return Err("NOT_VALID".to_string());
     }
+    else{
+        return Err("NOT_A_NEGATIVE".to_string());
+    }
+}
+
+fn is_even(n: i32) -> Result<bool, String>{
+
+    if n % 2 == 0{
+        return Ok(true);
+    }
+    else{
+        return Err("NOT_EVEN".to_string());
+    }
+}
+
+fn is_prime(num: u32) -> Result<bool, String>{
+
+    let mut flag :bool = false;
+
+    if num > 1{
+        
+        for i in 2..num{
+
+            if num % i == 0{
+                flag = true;
+                break;
+            }
+        }
+    }
+
+    if flag == false{
+        return Ok(true);
+    }
+
+    else{
+        return Err("NOT_A_PRIME".to_string());
+    }
+
 }
