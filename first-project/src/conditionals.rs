@@ -21,12 +21,16 @@ pub fn run(){
     let is_of_age = if age >= 21 { true } else { false };
     println!("Is Of Age: {}", is_of_age);
 
-    if is_of_age == true{
+    add_numbers(5, 42);
+}
+fn print_number(num: i8){
+    println!("The number is: {}", num);
+}
 
-        println!("Eres una vieja compa");
-    }
+fn add_numbers(num1: i8, num2: i8){
+    print_number(num1 + num2);
+}
 
-    if true{
-        println!("Hola, soy bata");
-    }
+fn get_years() -> Vec<i32>{
+    return vec![1980, 1990, 2000, 2010, 2020];
 }

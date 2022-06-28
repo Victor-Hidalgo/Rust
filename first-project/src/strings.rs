@@ -34,19 +34,14 @@ pub fn run(){
     s.replace("World", "There");
     println!("End: {}", s);
 
-    /*//Create string with capacity
-    let mut s = String::with_capacity(10);
-    s.push('a');
-    s.push('b');
-    println!("{}", s);
-
     //Assertion testing
-    assert_eq!(2, s.len());
+    /*assert_eq!(2, s.len());
     assert_eq!(10, s.capacity());*/
 
-    let s2 = String::from("Hello,");
-    let mut s1 = String::from("World!");
-    s1.push_str("Hello,");
-
+    let s1 = String::from("Apple, ");
+    let s2 = String::from("Banana");
+    let s3 = s1 + &s2;
+    
+    //println!("Last s: {}", s1);
     //println!("{}", s1);
 }
