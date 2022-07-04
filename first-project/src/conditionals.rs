@@ -22,6 +22,15 @@ pub fn run(){
     println!("Is Of Age: {}", is_of_age);
 
     add_numbers(5, 42);
+
+    foo();
+
+    let mut v = vec![100, 32, 57];
+
+    for i in &mut v {
+        *i += 50;
+    }
+    println!("{:?}", v);
 }
 fn print_number(num: i8){
     println!("The number is: {}", num);
@@ -31,6 +40,7 @@ fn add_numbers(num1: i8, num2: i8){
     print_number(num1 + num2);
 }
 
-fn get_years() -> Vec<i32>{
-    return vec![1980, 1990, 2000, 2010, 2020];
+fn foo(){
+    let x = 2;
+    let x = 3;
 }

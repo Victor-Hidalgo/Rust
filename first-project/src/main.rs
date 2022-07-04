@@ -10,7 +10,7 @@ mod conditionals;
 mod matches;
 mod loops;
 mod errors;*/
-mod conditionals;
+mod vectors;
 
 fn main() {
     /*
@@ -25,5 +25,5 @@ fn main() {
     matches::run();
     loops::run();
     errors::run();*/
-    conditionals::run();
+    vectors::run();
 }

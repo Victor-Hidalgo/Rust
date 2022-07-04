@@ -40,5 +40,13 @@ pub fn run(){
         *x *= 2;
     }
 
-    println!("Numbers Vec: {:?}", numbers);
+    println!("Numbers Vector: {:?}", numbers);
+
+    let mut v = vec![1, -3, 5, -7, 9];
+
+    let first = &v[1];
+
+    v.push(6);
+
+    println!("The first element is: {}", first);
 }
