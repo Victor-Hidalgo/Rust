@@ -40,13 +40,32 @@ pub fn run(){
         *x *= 2;
     }
 
-    println!("Numbers Vector: {:?}", numbers);
+    /*println!("Numbers Vector: {:?}", numbers);
+    let s1 = "Goodbye";
+    let sub1 = &s1[0..4];
 
-    let mut v = vec![1, -3, 5, -7, 9];
+    let fullname = " Rust Tutorial \r\n";
+    println!("Before trim ");
+    println!("length is {}",fullname.len());
+    println!("After trim ");
+    println!("length is {}",fullname.trim().len());*/
 
-    let first = &v[1];
+    use std::collections::HashMap;
+    let mut scores = HashMap::new();
 
-    v.push(6);
+    scores.insert(String::from("Red"), 10);
+    scores.insert(String::from("Blue"), 50);
+    scores.entry(String::from("Yellow"));
 
-    println!("The first element is: {}", first);
+    let team_name = String::from("Blue");
+    let team_name2 = String::from("Yellow");
+    let score = if scores.get(&team_name) > scores.get(&team_name){
+
+        team_name;
+    } else{
+        team_name2;
+    };
+    
+    
+    println!("Value: {:?}", score);
 }
