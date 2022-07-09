@@ -3,17 +3,18 @@ use std::time::Duration;
 
 pub fn run(){
 
-    let handle = thread::spawn(|| {
-        for i in 1..10 {
-            println!("Number {} from spawned thread", i);
-            thread::sleep(Duration::from_millis(1));
-        }
+    let v = vec![5, 10, 15, 20];
+
+    let handle = thread::spawn( move || {
+        println!("Vector: {:?}", v);
     });
 
-    handle.join().unwrap();
+    let arr = ['a', 'b', 'c', 'd', 'e'];
 
-    for i in 1..5 {
-        println!("Number {} from main thread", i);
+    for index in 0..arr.len(){
+        println!("{}", arr[index]);
         thread::sleep(Duration::from_millis(1));
     }
+
+    handle.join().unwrap();
 }
